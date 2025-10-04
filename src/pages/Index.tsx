@@ -202,15 +202,21 @@ export default function Index() {
               <Icon name="GraduationCap" className="text-primary" size={32} />
               <h3 className="text-2xl font-bold text-foreground">Частная школа</h3>
             </div>
-            <div className="hidden md:flex gap-8">
+            <div className="hidden md:flex gap-8 items-center">
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">О школе</button>
               <button onClick={() => scrollToSection('programs')} className="text-foreground hover:text-primary transition-colors">Программы</button>
               <button onClick={() => scrollToSection('teachers')} className="text-foreground hover:text-primary transition-colors">Педагоги</button>
               <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors">Контакты</button>
             </div>
-            <Button onClick={() => scrollToSection('contact')} className="hidden md:block">
-              Записаться
-            </Button>
+            <div className="hidden md:flex items-center gap-4">
+              <a href="tel:+74951234567" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                <Icon name="Phone" size={20} />
+                <span className="font-semibold">+7 (495) 123-45-67</span>
+              </a>
+              <Button onClick={() => scrollToSection('contact')}>
+                Записаться
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
