@@ -258,7 +258,14 @@ export default function Index() {
       </nav>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent pt-20">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+        <div className="absolute inset-0">
+          <img 
+            src="/img/308ec8fd-3b44-4a9a-abe6-4996f756efe7.jpg" 
+            alt="Школьники" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/80 to-accent/80"></div>
+        </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center text-white animate-fade-in">
           <Badge className="mb-6 text-base px-6 py-2 bg-white/20 border-white/40">🚀 Набор на 2024-2025 учебный год открыт</Badge>
