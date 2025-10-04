@@ -222,7 +222,7 @@ export default function Index() {
         </div>
 
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white/98 backdrop-blur-sm border-b shadow-lg animate-fade-in">
+          <div className="absolute top-full left-0 w-full bg-white border-b shadow-lg animate-fade-in">
             <div className="container mx-auto px-6 py-6">
               <div className="flex flex-col gap-4">
                 <button 
