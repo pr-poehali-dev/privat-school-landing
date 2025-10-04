@@ -14,6 +14,7 @@ export default function Index() {
     email: '',
     message: ''
   });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ export default function Index() {
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
   };
 
   const advantages = [
@@ -202,22 +204,52 @@ export default function Index() {
               <Icon name="GraduationCap" className="text-primary" size={32} />
               <h3 className="text-2xl font-bold text-foreground">Частная школа</h3>
             </div>
-            <div className="hidden md:flex gap-8 items-center">
-              <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">О школе</button>
-              <button onClick={() => scrollToSection('programs')} className="text-foreground hover:text-primary transition-colors">Программы</button>
-              <button onClick={() => scrollToSection('teachers')} className="text-foreground hover:text-primary transition-colors">Педагоги</button>
-            </div>
-            <div className="hidden md:flex items-center gap-4">
+            
+            <div className="flex items-center gap-4">
               <a href="tel:+74951234567" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                 <Icon name="Phone" size={20} />
-                <span className="font-semibold">+7 (495) 123-45-67</span>
+                <span className="font-semibold hidden sm:inline">+7 (495) 123-45-67</span>
               </a>
-              <Button onClick={() => scrollToSection('contact')}>
-                Записаться
-              </Button>
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+                aria-label="Меню"
+              >
+                <Icon name={isMenuOpen ? "X" : "Menu"} size={28} className="text-foreground" />
+              </button>
             </div>
           </div>
         </div>
+
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white/98 backdrop-blur-sm border-b shadow-lg animate-fade-in">
+            <div className="container mx-auto px-6 py-6">
+              <div className="flex flex-col gap-4">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+                >
+                  О школе
+                </button>
+                <button 
+                  onClick={() => scrollToSection('programs')} 
+                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+                >
+                  Программы
+                </button>
+                <button 
+                  onClick={() => scrollToSection('teachers')} 
+                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+                >
+                  Педагоги
+                </button>
+                <Button onClick={() => scrollToSection('contact')} className="w-full">
+                  Записаться на экскурсию
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent pt-20">
