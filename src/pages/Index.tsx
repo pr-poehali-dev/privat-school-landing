@@ -221,35 +221,30 @@ export default function Index() {
           </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white border-b shadow-lg animate-fade-in">
-            <div className="container mx-auto px-6 py-6">
-              <div className="flex flex-col gap-4">
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
-                >
-                  О школе
-                </button>
-                <button 
-                  onClick={() => scrollToSection('programs')} 
-                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
-                >
-                  Программы
-                </button>
-                <button 
-                  onClick={() => scrollToSection('teachers')} 
-                  className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
-                >
-                  Педагоги
-                </button>
-                <Button onClick={() => scrollToSection('contact')} className="w-full">
-                  Записаться на экскурсию
-                </Button>
-              </div>
+        <div className={`absolute top-full left-0 w-full bg-white border-b shadow-lg overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="container mx-auto px-6 py-6">
+            <div className="flex flex-col gap-4">
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+              >
+                О школе
+              </button>
+              <button 
+                onClick={() => scrollToSection('programs')} 
+                className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+              >
+                Программы
+              </button>
+              <button 
+                onClick={() => scrollToSection('teachers')} 
+                className="text-left text-lg text-foreground hover:text-primary transition-colors py-2"
+              >
+                Педагоги
+              </button>
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent pt-20">
