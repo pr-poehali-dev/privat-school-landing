@@ -221,7 +221,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className={`fixed top-0 right-0 h-screen w-full sm:w-96 bg-white shadow-2xl transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed top-0 right-0 h-screen w-full sm:w-96 bg-white shadow-2xl transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-6 border-b">
               <h3 className="text-2xl font-bold text-foreground">Меню</h3>
