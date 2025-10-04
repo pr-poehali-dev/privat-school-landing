@@ -206,7 +206,6 @@ export default function Index() {
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">О школе</button>
               <button onClick={() => scrollToSection('programs')} className="text-foreground hover:text-primary transition-colors">Программы</button>
               <button onClick={() => scrollToSection('teachers')} className="text-foreground hover:text-primary transition-colors">Педагоги</button>
-              <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors">Контакты</button>
             </div>
             <div className="hidden md:flex items-center gap-4">
               <a href="tel:+74951234567" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
